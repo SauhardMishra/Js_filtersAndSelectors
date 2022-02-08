@@ -1,0 +1,23 @@
+#main {
+  overflow: hidden;
+}
+
+#Products {
+  border: 1px solid black;
+  margin-left: 25%;
+  width: 50%;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.close:hover {
+  background: #bbb;
+}

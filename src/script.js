@@ -42,7 +42,7 @@ $(document).ready(function () {
     for (i = 0; i < products.length; i++) {
       var tData = document.getElementById("Products");
 
-      tData.innerHTML += `<tr>
+      tData.innerHTML += `<tr class="content">
         <td>${products[i].id}</td>
         <td>${products[i].name}</td>
         <td>${products[i].brand}</td>
@@ -53,8 +53,35 @@ $(document).ready(function () {
     } //end of for loop
 
     $(".close").click(function () {
+      //Event to delete a row
       $(this).closest("tr").remove();
+    }); //End of event
+
+    $("#myInput").on("keyup", function () {         //Search event function
+      var value = $(this).val().toLowerCase();
+      $("tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
     });
+
+    function clearFilter() {
+      $("#filterText").val("");
+      $(".content").show();
+    } //End of clearFilter function
+
+    function filterTxt() {
+      var rex = new RegExp($("#filterText").val());
+      if (rex == "All") {
+        clearFilter();
+      } else {
+        $(".content").hide();
+        $(".content")
+          .filter(function () {
+            return rex.test($(this).text());
+          })
+          .show();
+      }
+    } //End of filterTxt function
   } //end of display function
 
   display();

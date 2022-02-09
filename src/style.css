@@ -1,7 +1,11 @@
 #main {
   overflow: hidden;
 }
-
+#filterText {
+  border: 1px solid black;
+  width: 50%;
+  margin-left: 25%;
+}
 #Products {
   border: 1px solid black;
   margin-left: 25%;
@@ -20,4 +24,11 @@ td {
 
 .close:hover {
   background: #bbb;
+}
+
+#myInput{
+  width: 49.5%;
+  margin-left: 25%;
+  border-radius: 15px;
+  margin-top: 5px;
 }

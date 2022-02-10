@@ -1,10 +1,24 @@
 #main {
   overflow: hidden;
+  
 }
-#filterText {
+#filterTextOs {
+  background-color: rgb(67, 186, 216);
+  color: black;
   border: 1px solid black;
-  width: 50%;
+  width: 25%;
   margin-left: 25%;
+  float: left;
+}
+
+#filterTextBrand {
+  background-color: rgb(67, 186, 216);
+  color: black;
+  border: 1px solid black;
+  width: 25%;
+  margin-left: 0%;
+  float: left;
+  
 }
 #Products {
   border: 1px solid black;

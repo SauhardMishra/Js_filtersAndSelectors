@@ -52,9 +52,9 @@ $(document).ready(function () {
         </tr>`;
     } //end of for loop
 
-    $(".close").click(function () {
+    $(".close").click(function () {        //Remove a row function
       //Event to delete a row
-      $(this).closest("tr").remove();
+      $(this).closest("tr").hide();
     }); //End of event
 
     $("#myInput").on("keyup", function () {         //Search event function
@@ -62,26 +62,41 @@ $(document).ready(function () {
       $("tr").filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
       });
+    });                                          //End of search event function
+
+    $("#filterTextOs").on("click", function () {         //Filter event function for Operating System
+      var value = $(this).val().toLowerCase();
+      $("tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });   
+
+    $("#filterTextBrand").on("click", function () {         //Filter event function for brand
+      var value = $(this).val().toLowerCase();
+      $("tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });   
+
+    $("#filterTextBrand").on("click",function(){     //Filter function
+      var filter1 = $(this).val();
+      if(filter1=="All"){
+        $(".content").show();
+      }
     });
 
-    function clearFilter() {
-      $("#filterText").val("");
-      $(".content").show();
-    } //End of clearFilter function
-
-    function filterTxt() {
-      var rex = new RegExp($("#filterText").val());
-      if (rex == "All") {
-        clearFilter();
-      } else {
-        $(".content").hide();
-        $(".content")
-          .filter(function () {
-            return rex.test($(this).text());
-          })
-          .show();
+    $("#filterTextOs").on("click",function(){     //Filter function
+      var filter1 = $(this).val();
+      if(filter1=="All"){
+        $(".content").show();
       }
-    } //End of filterTxt function
+    });
+
+    
+
+   
+    
+    
   } //end of display function
 
   display();

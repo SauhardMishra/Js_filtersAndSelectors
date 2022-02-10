@@ -9,20 +9,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    
     <div id="main">
-      <select id="filterText" onchange="filterTxt()">
+      <select id="filterTextOs">
         <option disabled selected>Select</option>
-        <option value='iOS'>iOS</option>
-        <option value='Android'>Android</option>
-        <option value='Windows'>Windows</option>
-                        <option value='Apple'>Apple</option>
-                        <option value='Motorola'>Motorola</option>
-                        <option value='Samsung'>Samsung</option>
-                        <option value='ASUS'>ASUS</option>
-                        <option value='Microsoft'>Microsoft</option>
-                        <option value='All'>All</option>
-
+        <option value="iOS">iOS</option>
+        <option value="Android">Android</option>
+        <option value="Windows">Windows</option>
+        <option value="All">All</option>
+        </select>
+        <select id="filterTextBrand">
+        <option disabled selected>Select</option>
+        <option value="Apple">Apple</option>
+        <option value="Motorola">Motorola</option>
+        <option value="Samsung">Samsung</option>
+        <option value="ASUS">ASUS</option>
+        <option value="Microsoft">Microsoft</option>
+        <option value="All">All</option>
+        </select>
+        
       </select>
       <table id="Products">
         <thead>
@@ -36,7 +40,7 @@
         </thead>
       </table>
 
-      <input id="myInput" type="text" placeholder="Search..">
+      <input id="myInput" type="text" placeholder="Search.." />
     </div>
     <script src="script.js"></script>
   </body>
